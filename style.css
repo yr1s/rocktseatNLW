@@ -1,0 +1,77 @@
+/* esse * é para que tudo que eu colocar nessa tag se aplique para tudo */
+* {
+  margin: 0;
+}
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'roboto', sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+main {
+  background: url(img/background.svg);
+  width: 375px;
+  height: 812px;
+}
+.container {
+  /*max width é a largura maxima*/
+  max-width: 250px;
+  margin-left: auto; /*margem automatica para o container*/
+  margin-right: auto;
+  text-align: center;
+  color: var(--gray);
+}
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative; /*impõe limites sobre o position:absolute, para que as alterações se apliquem apenas para o avatar*/
+}
+.avatar span /* dvisão que existe dentro da caixa avatar*/ {
+  position: absolute; /* permite que uma imagem fique encima da outra*/
+  top: -15px;
+  z-index: 1;
+}
+.avatar >/* para alterar apenas a imagem do primeiro nivel e não as duas*/ img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /*para a imagem não ficar esticada*/
+  clip-path: polygon(
+    51% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  ); /*para deixar a imagem no formato de um poligono*/
+}
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+p {
+  margin-top: 2rem;
+}
+ul {
+  margin-top: 4rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
